@@ -11,19 +11,22 @@ export interface SignInDialogProps {
 export const SignInDialog = ({ show, close }: SignInDialogProps) => {
   const { signIn } = useAuth();
 
+  const signInAgent = () => {
+    // Code to directly access AgentGPT without sign-in (for development purposes)
+    // Insert your implementation here
+    console.log("Accessing AgentGPT without sign-in for development purposes");
+  };
+
   return (
     <Dialog
       header="Sign in 🔐"
       isShown={show}
       close={close}
-      footerButton={<Button onClick={() => void signIn()}>Sign in</Button>}
+      footerButton={<Button onClick={signInAgent}>Access AgentGPT</Button>}
     >
       <p>
-        Please{" "}
-        <a className="link" onClick={() => void signIn()}>
-          sign in
-        </a>{" "}
-        to deploy an Agent! 🤖
+        For development purposes, you can directly access AgentGPT without signing in.
+        {/* Add your additional instructions or information here */}
       </p>
     </Dialog>
   );
